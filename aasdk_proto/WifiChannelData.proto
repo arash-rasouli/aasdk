@@ -18,11 +18,13 @@
 
 syntax="proto2";
 
+option optimize_for=SPEED;
+
+
+
 package f1x.aasdk.proto.data;
 
-message Speed
+message WifiChannel
 {
-    required int32 speed = 1;
-    optional bool cruise_engaged = 2;
-    optional bool cruise_set_speed = 3;
-}
+    required string ssid = 1;
+} 
