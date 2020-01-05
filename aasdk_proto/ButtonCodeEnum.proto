@@ -42,6 +42,14 @@ message ButtonCode
         PREV = 0x58;
         PLAY = 0x7E;
         PAUSE = 0x7F;
+        MUSIC = 0xD1;
         SCROLL_WHEEL = 65536;
+        MEDIA = 65537;
+        NAVIGATION = 65538;
+        RADIO = 65539;
+        TEL = 65540;
+        PRIMARY_BUTTON = 65541;
+        SECONDARY_BUTTON = 65542;
+        TERTIARY_BUTTON = 65543;
     }
 }
