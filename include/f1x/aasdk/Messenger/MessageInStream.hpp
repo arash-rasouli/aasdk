@@ -18,12 +18,14 @@
 
 #pragma once
 
+#include <map>
 #include <f1x/aasdk/Transport/ITransport.hpp>
 #include <f1x/aasdk/Messenger/IMessageInStream.hpp>
 #include <f1x/aasdk/Messenger/ICryptor.hpp>
 #include <f1x/aasdk/Messenger/FrameHeader.hpp>
 #include <f1x/aasdk/Messenger/FrameSize.hpp>
 #include <f1x/aasdk/Messenger/FrameType.hpp>
+
 namespace f1x
 {
 namespace aasdk
@@ -51,8 +53,7 @@ private:
     FrameType recentFrameType_;
     ReceivePromise::Pointer promise_;
     Message::Pointer message_;
-
-    std::map<messenger::ChannelId, Message::Pointer> channel_assembly_buffers;
+    std::map<messenger::ChannelId, Message::Pointer> messageBuffer_;
 };
 
 }

@@ -18,7 +18,7 @@
 
 #include <f1x/aasdk/Messenger/MessageInStream.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
-#include <iostream>
+
 namespace f1x
 {
 namespace aasdk
@@ -63,28 +63,32 @@ void MessageInStream::startReceive(ReceivePromise::Pointer promise)
 void MessageInStream::receiveFrameHeaderHandler(const common::DataConstBuffer& buffer)
 {
     FrameHeader frameHeader(buffer);
+
     if(message_ != nullptr && message_->getChannelId() != frameHeader.getChannelId())
     {
-        // we have interleaved channels, stop working on the old one and store it for later; Switch to the new one
-        channel_assembly_buffers[message_->getChannelId()] = message_;
+        messageBuffer_[message_->getChannelId()] = message_;
         message_ = nullptr;
-        // message_.reset();
-        // promise_->reject(error::Error(error::ErrorCode::MESSENGER_INTERTWINED_CHANNELS));
-        // promise_.reset();
-        // return;
     }
-    auto prevBuffer = channel_assembly_buffers.find(frameHeader.getChannelId());
-    if(prevBuffer != channel_assembly_buffers.end()){ // is there previous data in our map?
-        if(frameHeader.getType()!=FrameType::FIRST) //only use the data if we're not on a new frame, otherwise disregard
-            message_ = prevBuffer->second;
-        else{
+
+    auto bufferedMessage = messageBuffer_.find(frameHeader.getChannelId());
+
+    if(bufferedMessage != messageBuffer_.end())
+    {
+        if(frameHeader.getType() != FrameType::FIRST)
+        {
+            message_ = bufferedMessage->second;
+        }
+        else
+        {
             message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
         }
-        channel_assembly_buffers.erase(prevBuffer); // get rid of the previously stored data because it's now our working data.
+        messageBuffer_.erase(bufferedMessage);
     }
-    else if(message_ == nullptr){
+    else if(message_ == nullptr)
+    {
         message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
     }
+
     recentFrameType_ = frameHeader.getType();
     const size_t frameSize = FrameSize::getSizeOf(frameHeader.getType() == FrameType::FIRST ? FrameSizeType::EXTENDED : FrameSizeType::SHORT);
 
