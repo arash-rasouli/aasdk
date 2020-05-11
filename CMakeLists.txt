@@ -1,4 +1,10 @@
 cmake_minimum_required(VERSION 3.5.1)
+
+find_program(CCACHE_PROGRAM ccache)
+if(CCACHE_PROGRAM)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+endif()
+
 project(aasdk CXX)
 
 set(base_directory ${CMAKE_CURRENT_SOURCE_DIR})
@@ -44,7 +50,6 @@ set(AASDK_PROTO_INCLUDE_DIRS ${CMAKE_CURRENT_BINARY_DIR})
 
 include_directories(${AASDK_PROTO_INCLUDE_DIRS}
                         ${Boost_INCLUDE_DIRS}
-                        ${LIBUSB_1_INCLUDE_DIRS}
                         ${PROTOBUF_INCLUDE_DIR}
                         ${OPENSSL_INCLUDE_DIR}
                         ${GTEST_INCLUDE_DIRS}
@@ -66,8 +71,8 @@ add_library(aasdk SHARED
 add_dependencies(aasdk aasdk_proto)
 target_link_libraries(aasdk
                         aasdk_proto
+			libusb
                         ${Boost_LIBRARIES}
-                        ${LIBUSB_1_LIBRARIES}
                         ${PROTOBUF_LIBRARIES}
                         ${OPENSSL_LIBRARIES}
                         ${WINSOCK2_LIBRARIES})
