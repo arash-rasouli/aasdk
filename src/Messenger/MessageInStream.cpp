@@ -64,16 +64,29 @@ void MessageInStream::receiveFrameHeaderHandler(const common::DataConstBuffer& b
 {
     FrameHeader frameHeader(buffer);
 
-    if(message_ == nullptr)
+    if(message_ != nullptr && message_->getChannelId() != frameHeader.getChannelId())
+    {
+        messageBuffer_[message_->getChannelId()] = message_;
+        message_ = nullptr;
+    }
+
+    auto bufferedMessage = messageBuffer_.find(frameHeader.getChannelId());
+
+    if(bufferedMessage != messageBuffer_.end())
+    {
+        if(frameHeader.getType() != FrameType::FIRST)
+        {
+            message_ = bufferedMessage->second;
+        }
+        else
+        {
+            message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
+        }
+        messageBuffer_.erase(bufferedMessage);
+    }
+    else if(message_ == nullptr)
     {
         message_ = std::make_shared<Message>(frameHeader.getChannelId(), frameHeader.getEncryptionType(), frameHeader.getMessageType());
-    }
-    else if(message_->getChannelId() != frameHeader.getChannelId())
-    {
-        message_.reset();
-        promise_->reject(error::Error(error::ErrorCode::MESSENGER_INTERTWINED_CHANNELS));
-        promise_.reset();
-        return;
     }
 
     recentFrameType_ = frameHeader.getType();
