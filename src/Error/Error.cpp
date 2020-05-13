@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace error
@@ -75,6 +74,5 @@ bool Error::operator!=(const ErrorCode& code) const
     return !operator==(code);
 }
 
-}
 }
 }

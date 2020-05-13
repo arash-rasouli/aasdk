@@ -16,12 +16,11 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/AccessoryModeQueryChain.hpp>
+#include <aasdk/Error/Error.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -206,6 +205,5 @@ void AccessoryModeQueryChain::startQueryHandler(IUSBEndpoint::Pointer usbEndpoin
     promise_.reset();
 }
 
-}
 }
 }

@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/Transport/UT/Transport.mock.hpp>
-#include <f1x/aasdk/Messenger/UT/Cryptor.mock.hpp>
-#include <f1x/aasdk/Messenger/UT/SendPromiseHandler.mock.hpp>
-#include <f1x/aasdk/Messenger/Promise.hpp>
-#include <f1x/aasdk/Messenger/MessageOutStream.hpp>
+#include <aasdk/Transport/UT/Transport.mock.hpp>
+#include <aasdk/Messenger/UT/Cryptor.mock.hpp>
+#include <aasdk/Messenger/UT/SendPromiseHandler.mock.hpp>
+#include <aasdk/Messenger/Promise.hpp>
+#include <aasdk/Messenger/MessageOutStream.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -223,7 +222,6 @@ BOOST_FIXTURE_TEST_CASE(MessageOutStream_SendSplittedMessage, MessageOutStreamUn
     ioService_.run();
 }
 
-}
 }
 }
 }

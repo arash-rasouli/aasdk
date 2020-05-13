@@ -16,11 +16,10 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/IO/PromiseLink.hpp>
-#include <f1x/aasdk/Channel/ServiceChannel.hpp>
+#include <aasdk/IO/PromiseLink.hpp>
+#include <aasdk/Channel/ServiceChannel.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -48,6 +47,5 @@ void ServiceChannel::send(messenger::Message::Pointer message, SendPromise::Poin
     messenger_->enqueueSend(std::move(message), std::move(sendPromise));
 }
 
-}
 }
 }

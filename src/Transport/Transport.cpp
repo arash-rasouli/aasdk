@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Transport/Transport.hpp>
+#include <aasdk/Transport/Transport.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -104,6 +103,5 @@ void Transport::send(common::Data data, SendPromise::Pointer promise)
     });
 }
 
-}
 }
 }

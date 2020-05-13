@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/Transport/UT/Transport.mock.hpp>
-#include <f1x/aasdk/Messenger/UT/Cryptor.mock.hpp>
-#include <f1x/aasdk/Messenger/UT/ReceivePromiseHandler.mock.hpp>
-#include <f1x/aasdk/Messenger/Promise.hpp>
-#include <f1x/aasdk/Messenger/MessageInStream.hpp>
+#include <aasdk/Transport/UT/Transport.mock.hpp>
+#include <aasdk/Messenger/UT/Cryptor.mock.hpp>
+#include <aasdk/Messenger/UT/ReceivePromiseHandler.mock.hpp>
+#include <aasdk/Messenger/Promise.hpp>
+#include <aasdk/Messenger/MessageInStream.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -418,7 +417,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_RejectWhenInProgress, MessageInStreamUni
 }
 
 
-}
 }
 }
 }

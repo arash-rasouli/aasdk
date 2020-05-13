@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/ConnectedAccessoriesEnumerator.hpp>
+#include <aasdk/USB/ConnectedAccessoriesEnumerator.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -133,6 +132,5 @@ void ConnectedAccessoriesEnumerator::reset()
     promise_.reset();
 }
 
-}
 }
 }

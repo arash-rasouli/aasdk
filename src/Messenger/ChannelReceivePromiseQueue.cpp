@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Messenger/ChannelReceivePromiseQueue.hpp>
+#include <aasdk/Messenger/ChannelReceivePromiseQueue.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -69,6 +68,5 @@ ReceivePromise::Pointer ChannelReceivePromiseQueue::pop()
     return this->pop(queue_.begin()->first);
 }
 
-}
 }
 }

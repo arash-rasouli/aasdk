@@ -17,11 +17,10 @@
 */
 
 #include <boost/endian/conversion.hpp>
-#include <f1x/aasdk/IO/PromiseLink.hpp>
-#include <f1x/aasdk/Messenger/MessageOutStream.hpp>
+#include <aasdk/IO/PromiseLink.hpp>
+#include <aasdk/Messenger/MessageOutStream.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -153,6 +152,5 @@ void MessageOutStream::reset()
     message_.reset();
 }
 
-}
 }
 }

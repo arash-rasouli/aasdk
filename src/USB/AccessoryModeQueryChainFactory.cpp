@@ -16,11 +16,10 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/AccessoryModeQueryChainFactory.hpp>
-#include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
+#include <aasdk/USB/AccessoryModeQueryChainFactory.hpp>
+#include <aasdk/USB/AccessoryModeQueryChain.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -41,6 +40,5 @@ IAccessoryModeQueryChain::Pointer AccessoryModeQueryChainFactory::create()
     return std::make_shared<AccessoryModeQueryChain>(usbWrapper_, ioService_, queryFactory_);
 }
 
-}
 }
 }

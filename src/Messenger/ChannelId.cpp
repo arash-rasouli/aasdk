@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Messenger/ChannelId.hpp>
+#include <aasdk/Messenger/ChannelId.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -54,6 +53,5 @@ std::string channelIdToString(ChannelId channelId)
     }
 }
 
-}
 }
 }

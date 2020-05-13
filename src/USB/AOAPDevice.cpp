@@ -17,12 +17,11 @@
 */
 
 #include <stdexcept>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
-#include <f1x/aasdk/USB/AOAPDevice.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/AOAPDevice.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -122,6 +121,5 @@ const libusb_interface_descriptor* AOAPDevice::getInterfaceDescriptor(const libu
     return &interface->altsetting[0];
 }
 
-}
 }
 }

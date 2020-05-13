@@ -16,11 +16,10 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Messenger/MessageInStream.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/Messenger/MessageInStream.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -166,6 +165,5 @@ void MessageInStream::receiveFramePayloadHandler(const common::DataConstBuffer& 
     }
 }
 
-}
 }
 }

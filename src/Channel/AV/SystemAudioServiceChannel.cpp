@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Channel/AV/SystemAudioServiceChannel.hpp>
+#include <aasdk/Channel/AV/SystemAudioServiceChannel.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -33,7 +32,6 @@ SystemAudioServiceChannel::SystemAudioServiceChannel(boost::asio::io_service::st
 
 }
 
-}
 }
 }
 }

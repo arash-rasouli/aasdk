@@ -17,11 +17,10 @@
 */
 
 #include <cstring>
-#include <f1x/aasdk/Transport/DataSink.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/Transport/DataSink.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -70,6 +69,5 @@ common::Data DataSink::consume(common::Data::size_type size)
     return data;
 }
 
-}
 }
 }

@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBWrapper.mock.hpp>
-#include <f1x/aasdk/USB/UT/USBEndpoint.mock.hpp>
-#include <f1x/aasdk/USB/UT/USBEndpointPromiseHandler.mock.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/UT/USBWrapper.mock.hpp>
+#include <aasdk/USB/UT/USBEndpoint.mock.hpp>
+#include <aasdk/USB/UT/USBEndpointPromiseHandler.mock.hpp>
+#include <aasdk/Error/Error.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -288,7 +287,6 @@ BOOST_FIXTURE_TEST_CASE(USBEndpoint_BulkTransferFailed, USBEndpointUnitTest)
     ioService_.run();
 }
 
-}
 }
 }
 }

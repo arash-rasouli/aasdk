@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Channel/AV/MediaAudioServiceChannel.hpp>
+#include <aasdk/Channel/AV/MediaAudioServiceChannel.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -33,7 +32,6 @@ MediaAudioServiceChannel::MediaAudioServiceChannel(boost::asio::io_service::stra
 
 }
 
-}
 }
 }
 }

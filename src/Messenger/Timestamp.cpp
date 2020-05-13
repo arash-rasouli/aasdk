@@ -17,10 +17,9 @@
 */
 
 #include <boost/endian/conversion.hpp>
-#include <f1x/aasdk/Messenger/Timestamp.hpp>
+#include <aasdk/Messenger/Timestamp.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -50,6 +49,5 @@ Timestamp::ValueType Timestamp::getValue() const
     return stamp_;
 }
 
-}
 }
 }

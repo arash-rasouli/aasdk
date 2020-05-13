@@ -18,10 +18,9 @@
 
 #include <iomanip>
 #include <boost/endian/conversion.hpp>
-#include <f1x/aasdk/Messenger/MessageId.hpp>
+#include <aasdk/Messenger/MessageId.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -80,12 +79,11 @@ bool MessageId::operator<=(uint16_t id) const
     return id <= id_;
 }
 
-std::ostream& operator<<(std::ostream& stream, const f1x::aasdk::messenger::MessageId& messageId)
+std::ostream& operator<<(std::ostream& stream, const aasdk::messenger::MessageId& messageId)
 {
     stream << "0x" << std::hex << messageId.getId() << std::dec;
     return stream;
 }
 
-}
 }
 }

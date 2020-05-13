@@ -17,10 +17,9 @@
 */
 
 #include <boost/endian/conversion.hpp>
-#include <f1x/aasdk/Messenger/FrameHeader.hpp>
+#include <aasdk/Messenger/FrameHeader.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -73,6 +72,5 @@ common::Data FrameHeader::getData() const
     return data;
 }
 
-}
 }
 }

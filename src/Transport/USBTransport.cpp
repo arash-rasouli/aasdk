@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Transport/USBTransport.hpp>
+#include <aasdk/Transport/USBTransport.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -91,6 +90,5 @@ void USBTransport::stop()
     aoapDevice_->getOutEndpoint().cancelTransfers();
 }
 
-}
 }
 }

@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBWrapper.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryChainFactory.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryChain.mock.hpp>
-#include <f1x/aasdk/USB/UT/USBHubPromiseHandler.mock.hpp>
-#include <f1x/aasdk/USB/USBHub.hpp>
+#include <aasdk/USB/UT/USBWrapper.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryChainFactory.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryChain.mock.hpp>
+#include <aasdk/USB/UT/USBHubPromiseHandler.mock.hpp>
+#include <aasdk/USB/USBHub.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -238,7 +237,6 @@ BOOST_FIXTURE_TEST_CASE(USBHub_CancelAllQueryChains, USBHubUnitTest)
     ioService_.run();
 }
 
-}
 }
 }
 }

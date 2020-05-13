@@ -17,10 +17,9 @@
 */
 
 #include <boost/asio.hpp>
-#include <f1x/aasdk/TCP/TCPWrapper.hpp>
+#include <aasdk/TCP/TCPWrapper.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace tcp
@@ -56,6 +55,5 @@ boost::system::error_code TCPWrapper::connect(boost::asio::ip::tcp::socket& sock
     return ec;
 }
 
-}
 }
 }

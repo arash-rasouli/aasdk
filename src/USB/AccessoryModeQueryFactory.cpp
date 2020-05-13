@@ -16,15 +16,14 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/AccessoryModeQueryFactory.hpp>
-#include <f1x/aasdk/USB/AccessoryModeSendStringQuery.hpp>
-#include <f1x/aasdk/USB/AccessoryModeStartQuery.hpp>
-#include <f1x/aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
-#include <f1x/aasdk/USB/AccessoryModeSendStringType.hpp>
+#include <aasdk/USB/AccessoryModeQueryFactory.hpp>
+#include <aasdk/USB/AccessoryModeSendStringQuery.hpp>
+#include <aasdk/USB/AccessoryModeStartQuery.hpp>
+#include <aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
+#include <aasdk/USB/AccessoryModeSendStringType.hpp>
 
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -76,6 +75,5 @@ IAccessoryModeQuery::Pointer AccessoryModeQueryFactory::createQuery(AccessoryMod
     }
 }
 
-}
 }
 }

@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Messenger/ChannelReceiveMessageQueue.hpp>
+#include <aasdk/Messenger/ChannelReceiveMessageQueue.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -62,6 +61,5 @@ void ChannelReceiveMessageQueue::clear()
     queue_.clear();
 }
 
-}
 }
 }

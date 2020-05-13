@@ -18,12 +18,11 @@
 
 #include <aasdk_proto/AVChannelMessageIdsEnum.pb.h>
 #include <aasdk_proto/ControlMessageIdsEnum.pb.h>
-#include <f1x/aasdk/Channel/AV/IAudioServiceChannelEventHandler.hpp>
-#include <f1x/aasdk/Channel/AV/AudioServiceChannel.hpp>
-#include <f1x/aasdk/Common/Log.hpp>
+#include <aasdk/Channel/AV/IAudioServiceChannelEventHandler.hpp>
+#include <aasdk/Channel/AV/AudioServiceChannel.hpp>
+#include <aasdk/Common/Log.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -175,7 +174,6 @@ void AudioServiceChannel::handleAVMediaWithTimestampIndication(const common::Dat
     }
 }
 
-}
 }
 }
 }

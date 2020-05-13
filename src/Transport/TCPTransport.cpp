@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Transport/TCPTransport.hpp>
+#include <aasdk/Transport/TCPTransport.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -83,6 +82,5 @@ void TCPTransport::sendHandler(SendQueue::iterator queueElement, const error::Er
     }
 }
 
-}
 }
 }

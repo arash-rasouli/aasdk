@@ -78,7 +78,7 @@ target_link_libraries(aasdk
                         ${WINSOCK2_LIBRARIES})
 
 install(TARGETS aasdk DESTINATION lib)
-install(DIRECTORY include/f1x DESTINATION include)
+install(DIRECTORY include/aasdk DESTINATION include)
 
 if(AASDK_TEST)
     add_executable(aasdk_ut

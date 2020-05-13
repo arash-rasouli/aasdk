@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBWrapper.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryChainFactory.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryChain.mock.hpp>
-#include <f1x/aasdk/USB/UT/ConnectedAccessoriesEnumeratorPromiseHandler.mock.hpp>
-#include <f1x/aasdk/USB/ConnectedAccessoriesEnumerator.hpp>
+#include <aasdk/USB/UT/USBWrapper.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryChainFactory.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryChain.mock.hpp>
+#include <aasdk/USB/UT/ConnectedAccessoriesEnumeratorPromiseHandler.mock.hpp>
+#include <aasdk/USB/ConnectedAccessoriesEnumerator.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -231,7 +230,6 @@ BOOST_FIXTURE_TEST_CASE(ConnectedAccessoriesEnumerator_CancelEnumeration, Connec
     ioService_.run();
 }
 
-}
 }
 }
 }
