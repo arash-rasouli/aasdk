@@ -8,3 +8,4 @@ aasdk_proto/*.pb.cc
 aasdk_proto/*.pb.h
 Makefile
 cmake_install.cmake
+install_manifest.txt
