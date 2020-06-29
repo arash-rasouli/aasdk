@@ -15,8 +15,8 @@ sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev libssl-dev libprotobuf
 
 git clone https://github.com/OpenDsh/aasdk
 
-mkdir aasdk_build; cd aasdk_build
-cmake -DCMAKE_BUILD_TYPE=Release ../aasdk
+cd aasdk
+cmake -DCMAKE_BUILD_TYPE=Release .
 make -j2
 sudo make install
 ```
