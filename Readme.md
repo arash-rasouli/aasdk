@@ -1,13 +1,24 @@
 
 # aasdk
 
-### Support project
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9YH2QCXZ3YZXJ)
-
-For support of other platforms please contact me at f1xstudiopl@gmail.com
-
 ### Brief description
 C++ object-oriented library containing implementation of core AndroidAuto(tm) functionalities needed to build headunit software.
+
+### Build Guide
+#### Local build instructions for Raspberry Pi
+
+```
+sudo apt-get update
+sudo apt-get -y install cmake build-essential
+
+sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev libssl-dev libprotobuf-dev protobuf-c-compiler protobuf-compiler libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 qtmultimedia5-dev libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev pulseaudio librtaudio-dev
+
+git clone https://github.com/f1xpl/aasdk
+
+mkdir aasdk_build; cd aasdk_build
+cmake -DCMAKE_BUILD_TYPE=Release ~/aasdk
+make -j2
+```
 
 ### Supported functionalities
  - AOAP (Android Open Accessory Protocol)
@@ -43,3 +54,9 @@ Copyrights (c) 2018 f1x.studio (Michal Szwaj)
  - [OpenSSL](https://www.openssl.org/)
  - [Google test framework](https://github.com/google/googletest)
 
+### Support OpenAuto Pro
+
+Support OpenAuto Pro by buying a license from Bluewave Studios, or donating below
+[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9YH2QCXZ3YZXJ)
+
+For support of other platforms please contact me at f1xstudiopl@gmail.com
