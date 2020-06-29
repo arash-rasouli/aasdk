@@ -18,6 +18,7 @@ git clone https://github.com/OpenDsh/aasdk
 mkdir aasdk_build; cd aasdk_build
 cmake -DCMAKE_BUILD_TYPE=Release ../aasdk
 make -j2
+sudo make install
 ```
 
 ### Supported functionalities
