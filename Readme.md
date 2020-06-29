@@ -9,7 +9,7 @@ C++ object-oriented library containing implementation of core AndroidAuto(tm) fu
 
 ```
 sudo apt-get update
-sudo apt-get -y install cmake build-essential
+sudo apt-get -y install cmake build-essential git
 
 sudo apt-get install -y libboost-all-dev libusb-1.0.0-dev libssl-dev libprotobuf-dev protobuf-c-compiler protobuf-compiler libqt5multimedia5 libqt5multimedia5-plugins libqt5multimediawidgets5 qtmultimedia5-dev libqt5bluetooth5 libqt5bluetooth5-bin qtconnectivity5-dev pulseaudio librtaudio-dev
 
