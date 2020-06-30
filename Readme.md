@@ -1,13 +1,25 @@
 
 # aasdk
 
-### Support project
-[![Donate](https://img.shields.io/badge/Donate-PayPal-green.svg)](https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=9YH2QCXZ3YZXJ)
-
-For support of other platforms please contact me at f1xstudiopl@gmail.com
-
 ### Brief description
 C++ object-oriented library containing implementation of core AndroidAuto(tm) functionalities needed to build headunit software.
+
+### Build Guide
+#### Local build instructions for Raspberry Pi
+
+```
+sudo apt-get update
+sudo apt-get -y install cmake build-essential git
+
+sudo apt-get install -y protobuf-compiler libprotobuf-dev libusb-1.0.0-dev libssl-dev libboost-dev libboost-system-dev libboost-log-dev
+
+git clone https://github.com/OpenDsh/aasdk
+
+cd aasdk
+cmake -DCMAKE_BUILD_TYPE=Release .
+make -j2
+sudo make install
+```
 
 ### Supported functionalities
  - AOAP (Android Open Accessory Protocol)
@@ -42,4 +54,3 @@ Copyrights (c) 2018 f1x.studio (Michal Szwaj)
  - [Protocol buffers](https://developers.google.com/protocol-buffers/)
  - [OpenSSL](https://www.openssl.org/)
  - [Google test framework](https://github.com/google/googletest)
-
