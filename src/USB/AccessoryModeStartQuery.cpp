@@ -17,11 +17,10 @@
 */
 
 #include <iomanip>
-#include <f1x/aasdk/USB/AccessoryModeStartQuery.hpp>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/AccessoryModeStartQuery.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -60,6 +59,5 @@ void AccessoryModeStartQuery::start(Promise::Pointer promise)
     });
 }
 
-}
 }
 }

@@ -18,14 +18,13 @@
 
 #include <boost/endian/conversion.hpp>
 #include <aasdk_proto/ControlMessageIdsEnum.pb.h>
-#include <f1x/aasdk/Version.hpp>
-#include <f1x/aasdk/IO/PromiseLink.hpp>
-#include <f1x/aasdk/Channel/Control/ControlServiceChannel.hpp>
-#include <f1x/aasdk/Channel/Control/IControlServiceChannelEventHandler.hpp>
-#include <f1x/aasdk/Common/Log.hpp>
+#include <aasdk/Version.hpp>
+#include <aasdk/IO/PromiseLink.hpp>
+#include <aasdk/Channel/Control/ControlServiceChannel.hpp>
+#include <aasdk/Channel/Control/IControlServiceChannelEventHandler.hpp>
+#include <aasdk/Common/Log.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -261,7 +260,6 @@ void ControlServiceChannel::handlePingResponse(const common::DataConstBuffer& pa
     }
 }
 
-}
 }
 }
 }

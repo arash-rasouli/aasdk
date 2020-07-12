@@ -17,11 +17,10 @@
 */
 
 #include <boost/endian/conversion.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
-#include <f1x/aasdk/Messenger/Messenger.hpp>
+#include <aasdk/Error/Error.hpp>
+#include <aasdk/Messenger/Messenger.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -138,6 +137,5 @@ void Messenger::stop()
     });
 }
 
-}
 }
 }

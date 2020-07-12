@@ -17,11 +17,10 @@
 */
 
 #include <boost/algorithm/hex.hpp>
-#include <f1x/aasdk/Common/Data.hpp>
-#include <f1x/aasdk/Common/Log.hpp>
+#include <aasdk/Common/Data.hpp>
+#include <aasdk/Common/Log.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace common
@@ -145,6 +144,5 @@ std::string dump(const DataConstBuffer& buffer)
     }
 }
 
-}
 }
 }

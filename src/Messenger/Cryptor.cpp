@@ -18,11 +18,10 @@
 
 #include <algorithm>
 #include <functional>
-#include <f1x/aasdk/Messenger/Cryptor.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/Messenger/Cryptor.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -321,6 +320,5 @@ eCXS4VrhEf4/HYMWP7GB5MFUOEVtlLiLM05ruUL7CrphdfgayDXVcTPfk75lLhmu\n\
 KAwp3tIHPoJOQiKNQ3/qks5km/9dujUGU2ARiU3qmxLMdgegFz8e\n\
 -----END RSA PRIVATE KEY-----\n";
 
-}
 }
 }

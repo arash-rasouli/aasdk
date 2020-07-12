@@ -71,14 +71,14 @@ add_library(aasdk SHARED
 add_dependencies(aasdk aasdk_proto)
 target_link_libraries(aasdk
                         aasdk_proto
-			libusb
+                        libusb
                         ${Boost_LIBRARIES}
                         ${PROTOBUF_LIBRARIES}
                         ${OPENSSL_LIBRARIES}
                         ${WINSOCK2_LIBRARIES})
 
 install(TARGETS aasdk DESTINATION lib)
-install(DIRECTORY include/f1x DESTINATION include)
+install(DIRECTORY include/aasdk DESTINATION include)
 
 if(AASDK_TEST)
     add_executable(aasdk_ut

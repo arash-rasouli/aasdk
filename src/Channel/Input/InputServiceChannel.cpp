@@ -19,12 +19,11 @@
 #include <aasdk_proto/ControlMessageIdsEnum.pb.h>
 #include <aasdk_proto/ButtonCodeEnum.pb.h>
 #include <aasdk_proto/InputChannelMessageIdsEnum.pb.h>
-#include <f1x/aasdk/Channel/Input/InputServiceChannel.hpp>
-#include <f1x/aasdk/Channel/Input/IInputServiceChannelEventHandler.hpp>
-#include <f1x/aasdk/Common/Log.hpp>
+#include <aasdk/Channel/Input/InputServiceChannel.hpp>
+#include <aasdk/Channel/Input/IInputServiceChannelEventHandler.hpp>
+#include <aasdk/Common/Log.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -125,7 +124,6 @@ void InputServiceChannel::handleChannelOpenRequest(const common::DataConstBuffer
     }
 }
 
-}
 }
 }
 }

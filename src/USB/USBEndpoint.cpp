@@ -16,12 +16,11 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
-#include <f1x/aasdk/USB/IUSBWrapper.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/IUSBWrapper.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -173,6 +172,5 @@ void USBEndpoint::transferHandler(libusb_transfer *transfer)
     });
 }
 
-}
 }
 }

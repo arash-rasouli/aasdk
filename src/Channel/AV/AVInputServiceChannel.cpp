@@ -18,13 +18,12 @@
 
 #include <aasdk_proto/ControlMessageIdsEnum.pb.h>
 #include <aasdk_proto/AVChannelMessageIdsEnum.pb.h>
-#include <f1x/aasdk/Messenger/Timestamp.hpp>
-#include <f1x/aasdk/Channel/AV/IAVInputServiceChannelEventHandler.hpp>
-#include <f1x/aasdk/Channel/AV/AVInputServiceChannel.hpp>
-#include <f1x/aasdk/Common/Log.hpp>
+#include <aasdk/Messenger/Timestamp.hpp>
+#include <aasdk/Channel/AV/IAVInputServiceChannelEventHandler.hpp>
+#include <aasdk/Channel/AV/AVInputServiceChannel.hpp>
+#include <aasdk/Common/Log.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace channel
@@ -169,7 +168,6 @@ void AVInputServiceChannel::handleChannelOpenRequest(const common::DataConstBuff
     }
 }
 
-}
 }
 }
 }

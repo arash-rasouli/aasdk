@@ -9,5 +9,5 @@ target_link_libraries(aasdk_proto ${PROTOBUF_LIBRARIES})
 
 install(TARGETS aasdk_proto DESTINATION lib)
 install(DIRECTORY . DESTINATION include/aasdk_proto
-	FILES_MATCHING PATTERN *.h
-	PATTERN CMakeFiles EXCLUDE )
+    FILES_MATCHING PATTERN *.h
+    PATTERN CMakeFiles EXCLUDE )

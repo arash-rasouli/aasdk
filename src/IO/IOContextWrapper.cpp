@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/IO/IOContextWrapper.hpp>
+#include <aasdk/IO/IOContextWrapper.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace io
@@ -57,6 +56,5 @@ bool IOContextWrapper::isActive() const
     return ioService_ != nullptr || strand_ != nullptr;
 }
 
-}
 }
 }

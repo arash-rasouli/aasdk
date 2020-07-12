@@ -17,12 +17,11 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/TCP/UT/TCPWrapper.mock.hpp>
-#include <f1x/aasdk/TCP/UT/TCPEndpointPromiseHandler.mock.hpp>
-#include <f1x/aasdk/TCP/TCPEndpoint.hpp>
+#include <aasdk/TCP/UT/TCPWrapper.mock.hpp>
+#include <aasdk/TCP/UT/TCPEndpointPromiseHandler.mock.hpp>
+#include <aasdk/TCP/TCPEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace tcp
@@ -126,7 +125,6 @@ BOOST_FIXTURE_TEST_CASE(TCPEndpoint_SendError, TCPEndpointUnitTest)
     ioService_.run();
 }
 
-}
 }
 }
 }

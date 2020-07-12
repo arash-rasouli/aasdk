@@ -17,12 +17,11 @@
 */
 
 #include <iomanip>
-#include <f1x/aasdk/Error/ErrorCode.hpp>
-#include <f1x/aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/Error/ErrorCode.hpp>
+#include <aasdk/USB/AccessoryModeProtocolVersionQuery.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -75,6 +74,5 @@ void AccessoryModeProtocolVersionQuery::protocolVersionHandler(size_t bytesTrans
     }
 }
 
-}
 }
 }

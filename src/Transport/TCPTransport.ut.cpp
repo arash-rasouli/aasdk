@@ -17,13 +17,12 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/TCP/UT/TCPEndpoint.mock.hpp>
-#include <f1x/aasdk/Transport/UT/TransportReceivePromiseHandler.mock.hpp>
-#include <f1x/aasdk/Transport/UT/TransportSendPromiseHandler.mock.hpp>
-#include <f1x/aasdk/Transport/TCPTransport.hpp>
+#include <aasdk/TCP/UT/TCPEndpoint.mock.hpp>
+#include <aasdk/Transport/UT/TransportReceivePromiseHandler.mock.hpp>
+#include <aasdk/Transport/UT/TransportSendPromiseHandler.mock.hpp>
+#include <aasdk/Transport/TCPTransport.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -273,7 +272,6 @@ BOOST_FIXTURE_TEST_CASE(TCPTransport_SendError, TCPTransportUnitTest)
     ioService_.run();
 }
 
-}
 }
 }
 }

@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBEndpoint.mock.hpp>
-#include <f1x/aasdk/USB/UT/AOAPDevice.mock.hpp>
-#include <f1x/aasdk/Transport/UT/TransportReceivePromiseHandler.mock.hpp>
-#include <f1x/aasdk/Transport/UT/TransportSendPromiseHandler.mock.hpp>
-#include <f1x/aasdk/Transport/USBTransport.hpp>
+#include <aasdk/USB/UT/USBEndpoint.mock.hpp>
+#include <aasdk/USB/UT/AOAPDevice.mock.hpp>
+#include <aasdk/Transport/UT/TransportReceivePromiseHandler.mock.hpp>
+#include <aasdk/Transport/UT/TransportSendPromiseHandler.mock.hpp>
+#include <aasdk/Transport/USBTransport.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -310,7 +309,6 @@ BOOST_FIXTURE_TEST_CASE(USBTransport_SendError, USBTransportUnitTest)
     ioService_.run();
 }
 
-}
 }
 }
 }

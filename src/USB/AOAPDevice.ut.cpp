@@ -17,11 +17,10 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBWrapper.mock.hpp>
-#include <f1x/aasdk/USB/AOAPDevice.hpp>
+#include <aasdk/USB/UT/USBWrapper.mock.hpp>
+#include <aasdk/USB/AOAPDevice.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -73,7 +72,6 @@ BOOST_AUTO_TEST_CASE(AOAPDevice_InEndpointFirst)
     BOOST_TEST(endpointDescriptor[1].bEndpointAddress == aoapDevice.getOutEndpoint().getAddress());
 }
 
-}
 }
 }
 }

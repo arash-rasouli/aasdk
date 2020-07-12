@@ -49,14 +49,14 @@ if (LIBUSB_1_LIBRARIES AND LIBUSB_1_INCLUDE_DIRS)
 else (LIBUSB_1_LIBRARIES AND LIBUSB_1_INCLUDE_DIRS)
   find_path(LIBUSB_1_INCLUDE_DIR
     NAMES
-	libusb.h
+      libusb.h
     PATHS
       /usr/include
       /usr/local/include
       /opt/local/include
       /sw/include
-	PATH_SUFFIXES
-	  libusb-1.0
+    PATH_SUFFIXES
+      libusb-1.0
   )
 
   find_library(LIBUSB_1_LIBRARY

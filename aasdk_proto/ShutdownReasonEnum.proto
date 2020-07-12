@@ -18,13 +18,13 @@
 
 syntax="proto2";
 
-package f1x.aasdk.proto.enums;
+package aasdk.proto.enums;
 
 message ShutdownReason
 {
     enum Enum
     {
-		NONE = 0;
-		QUIT = 1;
+        NONE = 0;
+        QUIT = 1;
     }
 }

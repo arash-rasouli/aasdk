@@ -16,11 +16,10 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/AccessoryModeQuery.hpp>
-#include <f1x/aasdk/USB/USBEndpoint.hpp>
+#include <aasdk/USB/AccessoryModeQuery.hpp>
+#include <aasdk/USB/USBEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -38,6 +37,5 @@ void AccessoryModeQuery::cancel()
     usbEndpoint_->cancelTransfers();
 }
 
-}
 }
 }

@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/Messenger/Message.hpp>
+#include <aasdk/Messenger/Message.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace messenger
@@ -100,6 +99,5 @@ void Message::insertPayload(common::DataBuffer& buffer)
     common::copy(payload_, buffer);
 }
 
-}
 }
 }

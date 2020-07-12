@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/TCP/TCPEndpoint.hpp>
+#include <aasdk/TCP/TCPEndpoint.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace tcp
@@ -70,6 +69,5 @@ void TCPEndpoint::asyncOperationHandler(const boost::system::error_code& ec, siz
     }
 }
 
-}
 }
 }

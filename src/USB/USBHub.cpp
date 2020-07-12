@@ -17,13 +17,12 @@
 */
 
 #include <thread>
-#include <f1x/aasdk/USB/IUSBWrapper.hpp>
-#include <f1x/aasdk/USB/USBHub.hpp>
-#include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
-#include <f1x/aasdk/Error/Error.hpp>
+#include <aasdk/USB/IUSBWrapper.hpp>
+#include <aasdk/USB/USBHub.hpp>
+#include <aasdk/USB/AccessoryModeQueryChain.hpp>
+#include <aasdk/Error/Error.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -139,6 +138,5 @@ void USBHub::handleDevice(libusb_device* device)
     }
 }
 
-}
 }
 }

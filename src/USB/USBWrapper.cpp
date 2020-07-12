@@ -16,10 +16,9 @@
 *  along with aasdk. If not, see <http://www.gnu.org/licenses/>.
 */
 
-#include <f1x/aasdk/USB/USBWrapper.hpp>
+#include <aasdk/USB/USBWrapper.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -168,6 +167,5 @@ libusb_transfer* USBWrapper::allocTransfer(int iso_packets)
     return libusb_alloc_transfer(iso_packets);
 }
 
-}
 }
 }

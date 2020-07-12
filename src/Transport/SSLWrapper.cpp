@@ -21,10 +21,9 @@
 #include <openssl/err.h>
 #include <openssl/ssl.h>
 #include <openssl/conf.h>
-#include <f1x/aasdk/Transport/SSLWrapper.hpp>
+#include <aasdk/Transport/SSLWrapper.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace transport
@@ -191,6 +190,5 @@ int SSLWrapper::getError(SSL* ssl, int returnCode)
     return SSL_get_error(ssl, returnCode);
 }
 
-}
 }
 }

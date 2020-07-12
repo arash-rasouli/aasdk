@@ -17,14 +17,13 @@
 */
 
 #include <boost/test/unit_test.hpp>
-#include <f1x/aasdk/USB/UT/USBWrapper.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryFactory.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQueryChainPromiseHandler.mock.hpp>
-#include <f1x/aasdk/USB/UT/AccessoryModeQuery.mock.hpp>
-#include <f1x/aasdk/USB/AccessoryModeQueryChain.hpp>
+#include <aasdk/USB/UT/USBWrapper.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryFactory.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQueryChainPromiseHandler.mock.hpp>
+#include <aasdk/USB/UT/AccessoryModeQuery.mock.hpp>
+#include <aasdk/USB/AccessoryModeQueryChain.hpp>
 
-namespace f1x
-{
+
 namespace aasdk
 {
 namespace usb
@@ -470,7 +469,6 @@ BOOST_FIXTURE_TEST_CASE(AccessoryModeQueryChain_RejectWhenInProgress, AccessoryM
     ioService_.run();
 }
 
-}
 }
 }
 }
