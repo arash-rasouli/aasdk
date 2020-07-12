@@ -24,8 +24,8 @@ message VideoFocusReason
 {
     enum Enum
     {
-		NONE = 0;
-		UNK_1 = 1;
-		UNK_2 = 2;
+        NONE = 0;
+        UNK_1 = 1;
+        UNK_2 = 2;
     }
 }

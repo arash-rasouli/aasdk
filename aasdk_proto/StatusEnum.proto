@@ -25,7 +25,7 @@ message Status
 {
     enum Enum
     {
-	OK = 0;
+        OK = 0;
         FAIL = 1;
     }
 }

@@ -24,8 +24,8 @@ message VideoFocusMode
 {
     enum Enum
     {
-		NONE = 0;
-		FOCUSED = 1;
-		UNFOCUSED = 2;
+        NONE = 0;
+        FOCUSED = 1;
+        UNFOCUSED = 2;
     }
 }

@@ -71,7 +71,7 @@ add_library(aasdk SHARED
 add_dependencies(aasdk aasdk_proto)
 target_link_libraries(aasdk
                         aasdk_proto
-			libusb
+                        libusb
                         ${Boost_LIBRARIES}
                         ${PROTOBUF_LIBRARIES}
                         ${OPENSSL_LIBRARIES}

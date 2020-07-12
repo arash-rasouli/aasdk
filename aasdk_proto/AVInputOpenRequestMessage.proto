@@ -22,8 +22,8 @@ package aasdk.proto.messages;
 
 message AVInputOpenRequest
 {
-	required bool open = 1;
-	optional bool anc = 2;
-	optional bool ec = 3;
-	optional int32 max_unacked = 4;
+    required bool open = 1;
+    optional bool anc = 2;
+    optional bool ec = 3;
+    optional int32 max_unacked = 4;
 }

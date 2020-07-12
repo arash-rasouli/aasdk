@@ -22,5 +22,5 @@ package aasdk.proto.messages;
 
 message AVChannelSetupRequest
 {
-	required uint32 config_index = 1;
+    required uint32 config_index = 1;
 }

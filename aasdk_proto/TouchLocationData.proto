@@ -22,7 +22,7 @@ package aasdk.proto.data;
 
 message TouchLocation
 {
-	required uint32 x = 1;
-	required uint32 y = 2;
-	required uint32 pointer_id = 3;
+    required uint32 x = 1;
+    required uint32 y = 2;
+    required uint32 pointer_id = 3;
 }

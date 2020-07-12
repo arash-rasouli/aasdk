@@ -25,7 +25,7 @@ message AVChannelSetupStatus
     enum Enum
     {
         NONE = 0;
-		FAIL = 1;
-		OK = 2;
+        FAIL = 1;
+        OK = 2;
     }
 }
