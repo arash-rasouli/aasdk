@@ -19,6 +19,7 @@
 #pragma once
 
 #include <functional>
+#include <boost/core/noncopyable.hpp>
 #include <boost/asio.hpp>
 #include <f1x/aasdk/Error/Error.hpp>
 #include <f1x/aasdk/IO/IOContextWrapper.hpp>
