@@ -3,13 +3,14 @@ cmake_minimum_required(VERSION 3.5.1)
 set (AASDK_VERSION_MAJOR 2)
 set (AASDK_VERSION_MINOR 1)
 set (AASDK_VERSION_PATCH 0)
+project(aasdk
+VERSION ${AASDK_VERSION_MAJOR}.${AASDK_VERSION_MINOR}.${AASDK_VERSION_PATCH}
+LANGUAGES CXX)
 
 find_program(CCACHE_PROGRAM ccache)
 if(CCACHE_PROGRAM)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
 endif()
-
-project(aasdk CXX)
 
 set(base_directory ${CMAKE_CURRENT_SOURCE_DIR})
 set(sources_directory ${base_directory}/src)
@@ -85,8 +86,8 @@ set(AASDK_VERSION_STRING ${AASDK_VERSION_MAJOR}.${AASDK_VERSION_MINOR}.${AASDK_V
 set_target_properties(aasdk PROPERTIES VERSION ${AASDK_VERSION_STRING}
                                           SOVERSION ${AASDK_VERSION_MAJOR})
 
-install(TARGETS aasdk DESTINATION lib)
-install(DIRECTORY include/aasdk DESTINATION include)
+install(TARGETS aasdk DESTINATION lib COMPONENT libraries)
+install(DIRECTORY include/aasdk DESTINATION include COMPONENT headers)
 
 if(AASDK_TEST)
     add_executable(aasdk_ut
@@ -105,3 +106,26 @@ if(AASDK_TEST)
         setup_target_for_coverage(NAME aasdk_coverage EXECUTABLE aasdk_ut DEPENDENCIES aasdk_ut)
     endif(AASDK_CODE_COVERAGE)
 endif(AASDK_TEST)
+SET(CPACK_GENERATOR "DEB")
+SET(CPACK_DEBIAN_PACKAGE_MAINTAINER "AASDK") #required
+SET(CPACK_PACKAGE_VENDOR "AASDK") 
+set(CPACK_DEBIAN_FILE_NAME DEB-DEFAULT)
+set(CPACK_DEBIAN_PACKAGE_DEPENDS "libusb-1.0-0,libboost-all-dev,libssl-dev,libprotobuf-dev")
+set(CPACK_COMPONENTS_ALL libraries headers Unspecified)
+set(CPACK_COMPONENT_LIBRARIES_DISPLAY_NAME "Libraries")
+set(CPACK_COMPONENT_HEADERS_DISPLAY_NAME "C++ Headers")
+set(CPACK_COMPONENT_LIBRARIES_DESCRIPTION
+  "Static libraries used to build programs with AASDK")
+set(CPACK_COMPONENT_HEADERS_DESCRIPTION
+  "C/C++ header files for use with AASDK")
+set(CPACK_COMPONENT_LIBRARIES_GROUP "Development")
+set(CPACK_COMPONENT_HEADERS_GROUP "Development")
+set(CPACK_COMPONENT_GROUP_DEVELOPMENT_EXPANDED ON)
+set(CPACK_COMPONENT_GROUP_DEVELOPMENT_DESCRIPTION
+  "All of the tools you'll ever need to develop software")
+set(CPACK_COMPONENT_HEADERS_DEPENDS libraries)
+set(CPACK_ALL_INSTALL_TYPES Full Developer)
+set(CPACK_INSTALL_TYPE_FULL_DISPLAY_NAME "Everything")
+set(CPACK_COMPONENT_LIBRARIES_INSTALL_TYPES Developer Full)
+set(CPACK_COMPONENT_HEADERS_INSTALL_TYPES Developer Full)
+INCLUDE(CPack)
