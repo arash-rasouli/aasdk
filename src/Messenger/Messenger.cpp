@@ -19,7 +19,7 @@
 #include <boost/endian/conversion.hpp>
 #include <aasdk/Error/Error.hpp>
 #include <aasdk/Messenger/Messenger.hpp>
-
+#include <aasdk/Common/Log.hpp>
 
 namespace aasdk
 {
@@ -37,7 +37,9 @@ Messenger::Messenger(boost::asio::io_service& ioService, IMessageInStream::Point
 
 void Messenger::enqueueReceive(ChannelId channelId, ReceivePromise::Pointer promise)
 {
+    // enqueueReceive is called from the service channel.
     receiveStrand_.dispatch([this, self = this->shared_from_this(), channelId, promise = std::move(promise)]() mutable {
+        //If there's any messages on the channel, resolve. The channel will call enqueueReceive again.
         if(!channelReceiveMessageQueue_.empty(channelId))
         {
             promise->resolve(std::move(channelReceiveMessageQueue_.pop(channelId)));
@@ -73,12 +75,14 @@ void Messenger::inStreamMessageHandler(Message::Pointer message)
 {
     auto channelId = message->getChannelId();
 
+    // If there's a promise on the queue, we resolve the promise with this message....
     if(channelReceivePromiseQueue_.isPending(channelId))
     {
         channelReceivePromiseQueue_.pop(channelId)->resolve(std::move(message));
     }
     else
     {
+        // Or we push the message to the Message Queue for when we do get a promise
         channelReceiveMessageQueue_.push(std::move(message));
     }
 
