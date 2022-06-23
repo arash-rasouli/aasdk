@@ -26,7 +26,5 @@ message VideoResolution
     {
         NONE = 0;
         _480p = 1;
-        _720p = 2;
-       _1080p = 3;
     }
 }
