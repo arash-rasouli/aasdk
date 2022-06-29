@@ -18,12 +18,7 @@
 
 syntax="proto2";
 
-import "BluetoothPairingMethodEnum.proto";
+
 
 package f1x.aasdk.proto.messages;
 
-message BluetoothPairingRequest
-{
-    required string phone_address = 1;
-    required enums.BluetoothPairingMethod.Enum pairing_method = 2;
-}

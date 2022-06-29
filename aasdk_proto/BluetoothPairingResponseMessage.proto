@@ -18,12 +18,8 @@
 
 syntax="proto2";
 
-import "BluetoothPairingStatusEnum.proto";
+
 
 package f1x.aasdk.proto.messages;
 
-message BluetoothPairingResponse
-{
-    required bool already_paired = 1;
-    required enums.BluetoothPairingStatus.Enum status = 2;
-}
+

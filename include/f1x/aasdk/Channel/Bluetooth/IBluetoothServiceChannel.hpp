@@ -20,10 +20,10 @@
 
 #include <memory>
 #include <aasdk_proto/ChannelOpenResponseMessage.pb.h>
-#include <aasdk_proto/BluetoothPairingResponseMessage.pb.h>
+// #include <aasdk_proto/BluetoothPairingResponseMessage.pb.h>
 #include <f1x/aasdk/Messenger/ChannelId.hpp>
 #include <f1x/aasdk/Channel/Promise.hpp>
-#include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannelEventHandler.hpp>
+// #include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannelEventHandler.hpp>
 
 namespace f1x
 {
@@ -31,24 +31,7 @@ namespace aasdk
 {
 namespace channel
 {
-namespace bluetooth
-{
 
-class IBluetoothServiceChannel
-{
-public:
-    typedef std::shared_ptr<IBluetoothServiceChannel> Pointer;
-
-    IBluetoothServiceChannel() = default;
-    virtual ~IBluetoothServiceChannel() = default;
-
-    virtual void receive(IBluetoothServiceChannelEventHandler::Pointer eventHandler) = 0;
-    virtual void sendChannelOpenResponse(const proto::messages::ChannelOpenResponse& response, SendPromise::Pointer promise) = 0;
-    virtual void sendBluetoothPairingResponse(const proto::messages::BluetoothPairingResponse& response, SendPromise::Pointer promise) = 0;
-    virtual messenger::ChannelId getId() const = 0;
-};
-
-}
 }
 }
 }
