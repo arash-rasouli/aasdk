@@ -28,23 +28,7 @@ namespace aasdk
 {
 namespace channel
 {
-// namespace bluetooth
-{
 
-// class IBluetoothServiceChannelEventHandler
-// {
-// public:
-//     typedef std::shared_ptr<IBluetoothServiceChannelEventHandler> Pointer;
-
-//     IBluetoothServiceChannelEventHandler() = default;
-//     virtual ~IBluetoothServiceChannelEventHandler() = default;
-
-//     virtual void onChannelOpenRequest(const proto::messages::ChannelOpenRequest& request) = 0;
-//     virtual void onBluetoothPairingRequest(const proto::messages::BluetoothPairingRequest& request) = 0;
-//     virtual void onChannelError(const error::Error& e) = 0;
-// };
-
-}
 }
 }
 }
