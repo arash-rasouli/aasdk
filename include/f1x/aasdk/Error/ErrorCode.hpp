@@ -62,7 +62,6 @@ enum class ErrorCode
     OPERATION_ABORTED = 30,
     OPERATION_IN_PROGRESS = 31,
     PARSE_PAYLOAD = 32,
-    TCP_TRANSFER = 33
 };
 
 }
