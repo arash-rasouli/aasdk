@@ -19,7 +19,6 @@
 #pragma once
 
 #include <f1x/aasdk/Channel/ServiceChannel.hpp>
-// #include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannel.hpp>
 
 namespace f1x
 {

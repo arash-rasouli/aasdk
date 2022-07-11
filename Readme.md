@@ -23,7 +23,6 @@ C++ object-oriented library containing implementation of core AndroidAuto(tm) fu
  - Speech audio channel
  - Audio input channel
  - Video channel
- - Bluetooth channel
  - Sensor channel
  - Control channel
  - Input channel

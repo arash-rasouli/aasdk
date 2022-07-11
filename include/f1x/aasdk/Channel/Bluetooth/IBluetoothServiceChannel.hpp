@@ -20,10 +20,8 @@
 
 #include <memory>
 #include <aasdk_proto/ChannelOpenResponseMessage.pb.h>
-// #include <aasdk_proto/BluetoothPairingResponseMessage.pb.h>
 #include <f1x/aasdk/Messenger/ChannelId.hpp>
 #include <f1x/aasdk/Channel/Promise.hpp>
-// #include <f1x/aasdk/Channel/Bluetooth/IBluetoothServiceChannelEventHandler.hpp>
 
 namespace f1x
 {
