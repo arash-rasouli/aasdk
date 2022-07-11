@@ -68,10 +68,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceivePlainMessage, MessageInStreamUnit
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
 
-    // FrameHeader frameHeader(ChannelId::BLUETOOTH, FrameType::BULK, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
-    // EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).WillOnce(SaveArg<1>(&frameHeaderTransportPromise));
-
     messageInStream->startReceive(std::move(receivePromise_));
 
     ioService_.run();
@@ -81,7 +77,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceivePlainMessage, MessageInStreamUnit
     FrameSize frameSize(framePayload.size());
     transport::ITransport::ReceivePromise::Pointer frameSizeTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameSize::getSizeOf(FrameSizeType::SHORT), _)).WillOnce(SaveArg<1>(&frameSizeTransportPromise));
-    // frameHeaderTransportPromise->resolve(frameHeader.getData());
 
     ioService_.run();
     ioService_.reset();
@@ -100,7 +95,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceivePlainMessage, MessageInStreamUnit
 
     ioService_.run();
 
-    // BOOST_CHECK(message->getChannelId() == ChannelId::BLUETOOTH);
     BOOST_CHECK(message->getEncryptionType() == EncryptionType::PLAIN);
     BOOST_CHECK(message->getType() == MessageType::SPECIFIC);
 
@@ -198,10 +192,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FramePayloadReceiveFailed, MessageInStre
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
 
-    // FrameHeader frameHeader(ChannelId::BLUETOOTH, FrameType::BULK, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
-    // EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).WillOnce(SaveArg<1>(&frameHeaderTransportPromise));
-
     messageInStream->startReceive(std::move(receivePromise_));
 
     ioService_.run();
@@ -211,7 +201,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FramePayloadReceiveFailed, MessageInStre
     FrameSize frameSize(framePayload.size());
     transport::ITransport::ReceivePromise::Pointer frameSizeTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameSize::getSizeOf(FrameSizeType::SHORT), _)).WillOnce(SaveArg<1>(&frameSizeTransportPromise));
-    // frameHeaderTransportPromise->resolve(frameHeader.getData());
 
     ioService_.run();
     ioService_.reset();
@@ -235,10 +224,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FramePayloadSizeReceiveFailed, MessageIn
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
 
-    // FrameHeader frameHeader(ChannelId::BLUETOOTH, FrameType::BULK, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
-    // EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).WillOnce(SaveArg<1>(&frameHeaderTransportPromise));
-
     messageInStream->startReceive(std::move(receivePromise_));
 
     ioService_.run();
@@ -246,7 +231,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FramePayloadSizeReceiveFailed, MessageIn
 
     transport::ITransport::ReceivePromise::Pointer frameSizeTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameSize::getSizeOf(FrameSizeType::SHORT), _)).WillOnce(SaveArg<1>(&frameSizeTransportPromise));
-    // frameHeaderTransportPromise->resolve(frameHeader.getData());
 
     ioService_.run();
     ioService_.reset();
@@ -263,10 +247,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FrameHeaderReceiveFailed, MessageInStrea
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
 
-    // FrameHeader frameHeader(ChannelId::BLUETOOTH, FrameType::BULK, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
-    // EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).WillOnce(SaveArg<1>(&frameHeaderTransportPromise));
-
     messageInStream->startReceive(std::move(receivePromise_));
 
     ioService_.run();
@@ -275,7 +255,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FrameHeaderReceiveFailed, MessageInStrea
     error::Error e(error::ErrorCode::USB_TRANSFER, 5);
     EXPECT_CALL(receivePromiseHandlerMock_, onReject(e));
     EXPECT_CALL(receivePromiseHandlerMock_, onResolve(_)).Times(0);
-    // frameHeaderTransportPromise->reject(e);
 
     ioService_.run();
 }
@@ -283,7 +262,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_FrameHeaderReceiveFailed, MessageInStrea
 BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceiveSplittedMessage, MessageInStreamUnitTest)
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
-    // FrameHeader frame1Header(ChannelId::BLUETOOTH, FrameType::FIRST, EncryptionType::PLAIN, MessageType::SPECIFIC);
 
     transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).Times(2).WillRepeatedly(SaveArg<1>(&frameHeaderTransportPromise));
@@ -321,9 +299,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceiveSplittedMessage, MessageInStreamU
     transport::ITransport::ReceivePromise::Pointer frame2SizeTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameSize::getSizeOf(FrameSizeType::SHORT), _)).WillOnce(SaveArg<1>(&frame2SizeTransportPromise));
 
-    // FrameHeader frame2Header(ChannelId::BLUETOOTH, FrameType::LAST, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // frameHeaderTransportPromise->resolve(frame2Header.getData());
-
     ioService_.run();
     ioService_.reset();
 
@@ -342,7 +317,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceiveSplittedMessage, MessageInStreamU
 
     ioService_.run();
 
-    // BOOST_CHECK(message->getChannelId() == ChannelId::BLUETOOTH);
     BOOST_CHECK(message->getEncryptionType() == EncryptionType::PLAIN);
     BOOST_CHECK(message->getType() == MessageType::SPECIFIC);
 
@@ -353,7 +327,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_ReceiveSplittedMessage, MessageInStreamU
 BOOST_FIXTURE_TEST_CASE(MessageInStream_IntertwinedChannels, MessageInStreamUnitTest)
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
-    // FrameHeader frame1Header(ChannelId::BLUETOOTH, FrameType::FIRST, EncryptionType::PLAIN, MessageType::SPECIFIC);
 
     transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
     EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).Times(2).WillRepeatedly(SaveArg<1>(&frameHeaderTransportPromise));
@@ -398,10 +371,6 @@ BOOST_FIXTURE_TEST_CASE(MessageInStream_IntertwinedChannels, MessageInStreamUnit
 BOOST_FIXTURE_TEST_CASE(MessageInStream_RejectWhenInProgress, MessageInStreamUnitTest)
 {
     MessageInStream::Pointer messageInStream(std::make_shared<MessageInStream>(ioService_, transport_, cryptor_));
-
-    // FrameHeader frameHeader(ChannelId::BLUETOOTH, FrameType::BULK, EncryptionType::PLAIN, MessageType::SPECIFIC);
-    // transport::ITransport::ReceivePromise::Pointer frameHeaderTransportPromise;
-    // EXPECT_CALL(transportMock_, receive(FrameHeader::getSizeOf(), _)).WillOnce(SaveArg<1>(&frameHeaderTransportPromise));
 
     messageInStream->startReceive(std::move(receivePromise_));
 
